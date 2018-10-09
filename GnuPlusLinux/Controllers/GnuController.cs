@@ -8,21 +8,42 @@ using GnuPlusLinux.Models;
 
 namespace GnuPlusLinux.Controllers
 {
-    public class HomeController : Controller
+    public class GnuController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Login()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Your contact page.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Application()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Forums()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Members()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Calendar()
         {
             ViewData["Message"] = "Your contact page.";
 

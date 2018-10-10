@@ -5,7 +5,7 @@ namespace GnuPlusLinuxDAL
     public class Profession
     {
 		[Key]
-		public int ProfessionId { get; set; }
+		public byte ProfessionId { get; set; }
 
 		[Required]
 		public string ProfessionName { get; set; }

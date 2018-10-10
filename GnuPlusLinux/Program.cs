@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+
+using GnuPlusLinuxDAL;
 
 namespace GnuPlusLinux
 {
@@ -14,11 +12,33 @@ namespace GnuPlusLinux
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+			IWebHost build = BuildWebHost(args);
+
+			using (IServiceScope scope = build.Services.CreateScope()) {
+				IServiceProvider services = scope.ServiceProvider;
+
+				try {
+					AccountContext context = services
+						.GetRequiredService<AccountContext>();
+
+					AccountDatabaseInitializer.Seed(context);
+				}
+				catch (Exception ex) {
+					ILogger logger = services
+						.GetRequiredService<ILogger<Program>>();
+
+					logger.LogError(ex, 
+						"An error occurred seeding the database.");
+				}
+			}
+
+			build.Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+		private static IWebHost BuildWebHost(string[] args) {
+			return WebHost.CreateDefaultBuilder(args)
+				.UseStartup<Startup>()
+				.Build();
+		}
     }
 }

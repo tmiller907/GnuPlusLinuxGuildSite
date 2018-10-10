@@ -42,39 +42,56 @@ namespace GnuPlusLinuxDAL
 		private static List<Class> AllClasses() 
 		{
 			return new List<Class> {
-				new Class { ClassName = "Druid" },
-				new Class { ClassName = "Hunter" },
-				new Class { ClassName = "Mage" },
-				new Class { ClassName = "Paladin" },
-				new Class { ClassName = "Priest" },
-				new Class { ClassName = "Rogue" },
-				new Class { ClassName = "Shaman" },
-				new Class { ClassName = "Warlock" },
-				new Class { ClassName = "Warrior" }
+				new Class { ClassId = 1, ClassName = "Druid" },
+				new Class { ClassId = 2, ClassName = "Hunter" },
+				new Class { ClassId = 3, ClassName = "Mage" },
+				new Class { ClassId = 4, ClassName = "Paladin" },
+				new Class { ClassId = 5, ClassName = "Priest" },
+				new Class { ClassId = 6, ClassName = "Rogue" },
+				new Class { ClassId = 7, ClassName = "Shaman" },
+				new Class { ClassId = 8, ClassName = "Warlock" },
+				new Class { ClassId = 9, ClassName = "Warrior" }
 			};
 		}
 
 		private static List<Role> AllRoles() 
 		{
 			return new List<Role> {
-				new Role { RoleName = "Tank" },
-				new Role { RoleName = "Healer" },
-				new Role { RoleName = "DPS" }
+				new Role { RoleId = 1, RoleName = "Tank" },
+				new Role { RoleId = 2, RoleName = "Healer" },
+				new Role { RoleId = 3, RoleName = "DPS" }
 			};
 		}
 
 		private static List<Profession> AllProfessions() 
 		{
 			return new List<Profession> {
-				new Profession { ProfessionName = "Herbalism" },
-				new Profession { ProfessionName = "Mining" },
-				new Profession { ProfessionName = "Skinning" },
-				new Profession { ProfessionName = "Alchemy" },
-				new Profession { ProfessionName = "Blacksmithing" },
-				new Profession { ProfessionName = "Enchanting" },
-				new Profession { ProfessionName = "Engineering" },
-				new Profession { ProfessionName = "Leatherworking" },
-				new Profession { ProfessionName = "Tailoring" }
+				new Profession { ProfessionId = 1,
+					ProfessionName = "Herbalism" },
+
+				new Profession { ProfessionId = 2,
+					ProfessionName = "Mining" },
+				
+				new Profession { ProfessionId = 3,
+					ProfessionName = "Skinning" },
+
+				new Profession { ProfessionId = 4,
+					ProfessionName = "Alchemy" },
+				
+				new Profession { ProfessionId = 5,
+					ProfessionName = "Blacksmithing" },
+				
+				new Profession { ProfessionId = 6,
+					ProfessionName = "Enchanting" },
+
+				new Profession { ProfessionId = 7,
+					ProfessionName = "Engineering" },
+
+				new Profession { ProfessionId = 8,
+					ProfessionName = "Leatherworking" },
+
+				new Profession { ProfessionId = 9,
+					ProfessionName = "Tailoring" }
 			};
 		}
     }

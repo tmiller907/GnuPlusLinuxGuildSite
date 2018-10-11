@@ -29,13 +29,6 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-        public IActionResult Forums()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Members()
         {
             ViewData["Message"] = "Your contact page.";

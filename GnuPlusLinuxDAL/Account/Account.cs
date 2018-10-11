@@ -29,7 +29,7 @@ namespace GnuPlusLinuxDAL
 		public bool IsAdmin { get; set; }
 
 		[Required]
-		public bool   IsMod        { get; set; }
+		public bool IsMod { get; set; }
 
 		// Toon Specific Information
 		public string ToonName    { get; set; }

@@ -10,7 +10,7 @@ namespace GnuPlusLinux.Controllers
 {
     public class HomeController : Controller
     {
-		[HttpGet]
+	[HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -24,7 +24,7 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		[HttpGet]
+	[HttpGet]
         public IActionResult Login()
         {
             ViewData["Message"] = "Your contact page.";
@@ -40,7 +40,7 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		[HttpGet]
+	[HttpGet]
         public IActionResult Members()
         {
             ViewData["Message"] = "Your contact page.";
@@ -56,7 +56,7 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		[HttpGet]
+	[HttpGet]
         public IActionResult Calendar()
         {
             ViewData["Message"] = "Your contact page.";
@@ -64,13 +64,13 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		[HttpGet]
+	[HttpGet]
         public IActionResult Privacy()
         {
             return View();
         }
 
-		[HttpGet]
+	[HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

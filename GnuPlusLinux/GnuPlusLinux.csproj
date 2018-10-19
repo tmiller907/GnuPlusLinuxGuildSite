@@ -14,16 +14,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Gnu\GuildNews.cshtml">
+    <Content Update="Views\Home\GuildNews.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Gnu\Index.cshtml">
+    <Content Update="Views\Home\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Gnu\Login.cshtml">
+    <Content Update="Views\Home\Registration.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Gnu\Privacy.cshtml">
+    <Content Update="Views\Home\Login.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\Privacy.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

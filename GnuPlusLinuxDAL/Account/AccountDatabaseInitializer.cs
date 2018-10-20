@@ -14,14 +14,14 @@ namespace GnuPlusLinuxDAL
 			// otherwise, create a SA account and add static data
 			// ---------------------------------------------------------------
 
-			if (context.Accounts.Any()) {
+			if (context.accounts.Any()) {
 				return;
 			}
 			else {
-				context.Accounts.Add(SuperAdmin());
-				AllClasses().ForEach(c => context.Classes.Add(c));
-				AllRoles().ForEach(r => context.Roles.Add(r));
-				AllProfessions().ForEach(p => context.Professions.Add(p));
+				context.accounts.Add(SuperAdmin());
+				AllClasses().ForEach(c => context.classes.Add(c));
+				AllRoles().ForEach(r => context.roles.Add(r));
+				AllProfessions().ForEach(p => context.professions.Add(p));
 
 				context.SaveChanges();
 			}
@@ -30,68 +30,68 @@ namespace GnuPlusLinuxDAL
 		private static Account SuperAdmin() 
 		{
 			return new Account {
-				Username = "SA",
-				Password = "TestAdmin",
-				ConfirmPw = "TestAdmin",
-				Email = "test@gmail.com",
-				IsAdmin = true,
-				IsMod = true,
+				username = "SA",
+				password = "TestAdmin",
+				confirmPw = "TestAdmin",
+				email = "test@gmail.com",
+				isAdmin = true,
+				isMod = true,
 			};
 		}
 
 		private static List<Class> AllClasses() 
 		{
 			return new List<Class> {
-				new Class { ClassId = 1, ClassName = "Druid" },
-				new Class { ClassId = 2, ClassName = "Hunter" },
-				new Class { ClassId = 3, ClassName = "Mage" },
-				new Class { ClassId = 4, ClassName = "Paladin" },
-				new Class { ClassId = 5, ClassName = "Priest" },
-				new Class { ClassId = 6, ClassName = "Rogue" },
-				new Class { ClassId = 7, ClassName = "Shaman" },
-				new Class { ClassId = 8, ClassName = "Warlock" },
-				new Class { ClassId = 9, ClassName = "Warrior" }
+				new Class { classId = 1, className = "Druid" },
+				new Class { classId = 2, className = "Hunter" },
+				new Class { classId = 3, className = "Mage" },
+				new Class { classId = 4, className = "Paladin" },
+				new Class { classId = 5, className = "Priest" },
+				new Class { classId = 6, className = "Rogue" },
+				new Class { classId = 7, className = "Shaman" },
+				new Class { classId = 8, className = "Warlock" },
+				new Class { classId = 9, className = "Warrior" }
 			};
 		}
 
 		private static List<Role> AllRoles() 
 		{
 			return new List<Role> {
-				new Role { RoleId = 1, RoleName = "Tank" },
-				new Role { RoleId = 2, RoleName = "Healer" },
-				new Role { RoleId = 3, RoleName = "DPS" }
+				new Role { roleId = 1, roleName = "Tank" },
+				new Role { roleId = 2, roleName = "Healer" },
+				new Role { roleId = 3, roleName = "DPS" }
 			};
 		}
 
 		private static List<Profession> AllProfessions() 
 		{
 			return new List<Profession> {
-				new Profession { ProfessionId = 1,
-					ProfessionName = "Herbalism" },
+				new Profession { professionId = 1,
+					professionName = "Herbalism" },
 
-				new Profession { ProfessionId = 2,
-					ProfessionName = "Mining" },
+				new Profession { professionId = 2,
+					professionName = "Mining" },
 				
-				new Profession { ProfessionId = 3,
-					ProfessionName = "Skinning" },
+				new Profession { professionId = 3,
+					professionName = "Skinning" },
 
-				new Profession { ProfessionId = 4,
-					ProfessionName = "Alchemy" },
+				new Profession { professionId = 4,
+					professionName = "Alchemy" },
 				
-				new Profession { ProfessionId = 5,
-					ProfessionName = "Blacksmithing" },
+				new Profession { professionId = 5,
+					professionName = "Blacksmithing" },
 				
-				new Profession { ProfessionId = 6,
-					ProfessionName = "Enchanting" },
+				new Profession { professionId = 6,
+					professionName = "Enchanting" },
 
-				new Profession { ProfessionId = 7,
-					ProfessionName = "Engineering" },
+				new Profession { professionId = 7,
+					professionName = "Engineering" },
 
-				new Profession { ProfessionId = 8,
-					ProfessionName = "Leatherworking" },
+				new Profession { professionId = 8,
+					professionName = "Leatherworking" },
 
-				new Profession { ProfessionId = 9,
-					ProfessionName = "Tailoring" }
+				new Profession { professionId = 9,
+					professionName = "Tailoring" }
 			};
 		}
     }

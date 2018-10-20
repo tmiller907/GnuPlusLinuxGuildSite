@@ -8,34 +8,34 @@ namespace GnuPlusLinuxDAL
     public class Account
     {
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int AccountId { get; set; }
+		public int accountId { get; set; }
 
 		[Required]
-		public string Username { get; set; }
+		public string username { get; set; }
 
 		[Required]
-		public string Password { get; set; }
+		public string password { get; set; }
 
 		[Compare("Password", ErrorMessage = "Passwords do not match")]
-		public string ConfirmPw { get; set; }
+		public string confirmPw { get; set; }
 
 		[Required]
-		public string Email { get; set; }
+		public string email { get; set; }
 
 		[Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-		public DateTime DateJoined { get; set; }
+		public DateTime dateJoined { get; set; }
 
 		[Required]
-		public bool IsAdmin { get; set; }
+		public bool isAdmin { get; set; }
 
 		[Required]
-		public bool IsMod { get; set; }
+		public bool isMod { get; set; }
 
 		// Toon Specific Information
 		public string ToonName    { get; set; }
-		public byte   Class       { get; set; }
-		public byte   Role        { get; set; }
-		public byte   Profession1 { get; set; }
-		public byte   Profession2 { get; set; }
+		public byte   toonClass   { get; set; }
+		public byte   role        { get; set; }
+		public byte   profession1 { get; set; }
+		public byte   profession2 { get; set; }
 	}
 }

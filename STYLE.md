@@ -257,9 +257,9 @@ public class FancyClass
 
     /* ... */
 
-    public int CalculateXAndY() 
+    public int Calculate() 
     {
-        // code
+        // code to calculate _x and _y
     }
 }
 ```
@@ -275,7 +275,7 @@ public class FancyClass
 
     public int Calculate(in int x, in int y) 
     {
-        // code
+        // code to calculate x and y
     }
 }
 ```

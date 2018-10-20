@@ -5,9 +5,9 @@ namespace GnuPlusLinuxDAL
     public class Role
     {
 		[Key]
-		public byte RoleId { get; set; }
+		public byte roleId { get; set; }
 
 		[Required]
-		public string RoleName { get; set; }
+		public string roleName { get; set; }
     }
 }

@@ -1,77 +1,88 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+
 using GnuPlusLinux.Models;
+using GnuPlusLinux.Models.Home;
 
 namespace GnuPlusLinux.Controllers
 {
     public class HomeController : Controller
     {
-	[HttpGet]
+        // Page Titles
+        private const string HomePageTitle = "Home";
+        private const string InformationPageTitle = "Information";
+        private const string RegistrationPageTitle = "Registration";
+        private const string ApplicationPageTitle = "Application";
+        private const string LoginPageTitle = "Login";
+
+        // Dummy Test
+        private const string ParisDummyText = "Paris is the capital of France.";
+        private const string TokyoDummyText = "Tokyo is the capital of Japan.";
+
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            IndexViewModel model = new IndexViewModel(HomePageTitle);
+            return View(model);
         }
 
         [HttpGet]
         public IActionResult Registration()
         {
-            ViewData["Message"] = "Your contact page.";
+            RegistrationViewModel model =
+                new RegistrationViewModel(RegistrationPageTitle);
 
-            return View();
+            return View(model);
         }
 
-	[HttpGet]
+        [HttpGet]
         public IActionResult Login()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            LoginViewModel model = new LoginViewModel(LoginPageTitle);
+            return View(model);
         }
 
-		[HttpGet]
+        [HttpGet]
         public IActionResult Application()
         {
-            ViewData["Message"] = "Your contact page.";
+            ApplicationViewModel model = 
+                new ApplicationViewModel(ApplicationPageTitle);
 
-            return View();
-        }
+            model.message = "GNU + Linux application";
 
-	[HttpGet]
-        public IActionResult Members()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View(model);
         }
 
         [HttpGet]
         public IActionResult Information()
         {
-            ViewData["Message"] = "Your contact page.";
+            InformationViewModel model =
+                new InformationViewModel(InformationPageTitle);
 
-            return View();
+            model.welcome = "Our vision: Be a guild that values loyalty," +
+                " community, friendships and \"fun\" more than" +
+                " \"progression\" or \"competition.\" We don't know if we" +
+                " will make it to level 60 or how Blizzard will develop" +
+                " Classic WoW. We might get to level 10 and get bored, or" +
+                " we might get obsessed and attempt to get world firsts!" +
+                " (Probably won't happen).\n\nHowever, we plan to participate" +
+                " in this grand adventure and see where we end up." +
+                " Progression may not be the primary focus of this guild" +
+                " right now, but it could be! This depends upon the coming" +
+                " weeks and months and how we grow as a community.";
+
+            model.charter = ParisDummyText;
+            model.rules = TokyoDummyText;
+            model.loot = ParisDummyText;
+            model.addons = TokyoDummyText;
+            model.recruitment = ParisDummyText;
+
+            return View(model);
         }
 
-	[HttpGet]
-        public IActionResult Calendar()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-	[HttpGet]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-	[HttpGet]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [HttpGet]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None,
+            NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

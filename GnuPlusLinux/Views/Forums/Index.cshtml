@@ -1,7 +1,8 @@
-﻿
+﻿@model GnuPlusLinux.Models.Forums.IndexViewModel
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
-<h4>@ViewBag.Message</h4>
+<h2>@Model.title</h2>
+<h4>@Model.message</h4>

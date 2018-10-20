@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "Calendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <link rel="stylesheet" href="~/css/Information.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <div id="wrapper">
+        <div id="info">
+
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
+                <button class="tablinks" onclick="openCity(event, 'Charter')">Charter</button>
+                <button class="tablinks" onclick="openCity(event, 'Rules')">Rules</button>
+                <button class="tablinks" onclick="openCity(event, 'Loot')">Loot Distribution</button>
+                <button class="tablinks" onclick="openCity(event, 'Addons')">Addons</button>
+                <button class="tablinks" onclick="openCity(event, 'Recruitment')">Recruitment</button>
+            </div>
+            <!-- Tab content -->
+            <div id="Welcome" class="tabcontent">
+                <h3>Welcome!</h3>
+                <p>
+                    Our vision: Be a guild that values loyalty, community, friendships and “fun” more than “progression” or "competition." We don't know if we will make it to level 60 or how Blizzard will develop Classic WoW. We might get to level 10 and get bored, or we might get obsessed and attempt to get world firsts! (Probably won't happen).
+
+                    However, we plan to participate in this grand adventure and see where we end up. Progression may not be the primary focus of this guild right now, but it could be! This depends upon the coming weeks and months and how we grow as a community.
+                </p>
+            </div>
+
+            <div id="Charter" class="tabcontent">
+                <h3>Charter</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Rules" class="tabcontent">
+                <h3>Rules</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Loot" class="tabcontent">
+                <h3>Loot Distribution</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Addons" class="tabcontent">
+                <h3>Required Addons</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Recruitment" class="tabcontent">
+                <h3>Recruitment</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <script>
+                function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+            </script>
+
+            <div id="info-content">
+            </div>
+        </div>
+
+
+
+
+        <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
+        <div class="menu">
+            <label class="menu-toggle" for="menu"><span>Toggle</span></label>
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Information">Information</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Registration">Registration</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div><!-- #wrapper -->
+</body>

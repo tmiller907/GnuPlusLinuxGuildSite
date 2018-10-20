@@ -61,7 +61,7 @@ namespace GnuPlusLinux
             {
                 routes.MapRoute(
                     name: "Default",
-                    template: "{controller=Gnu}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

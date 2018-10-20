@@ -16,42 +16,9 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Gnu" asp-action="Index" class="navbar-brand">GnuPlusLinux</a>
-            </div>
-            <div class="navbar-collapse collapse navbar-left">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Gnu" asp-action="Application">Apply</a></li>
-                    <li><a asp-area="" asp-controller="Forums" asp-action="Index">Forums</a></li>
-                    <li><a asp-area="" asp-controller="Gnu" asp-action="Members">Members</a></li>
-                    <li><a asp-area="" asp-controller="Gnu" asp-action="Calendar">Calendar</a></li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Gnu" asp-action="Login">Login</a></li>
-                    <li><a asp-area="" asp-controller="Member" asp-action="Register">Register</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <partial name="_CookieConsentPartial" />
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-    </div>
+    @RenderBody()
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -73,12 +40,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
-
-
-
 
 
 </html>

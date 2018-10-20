@@ -8,15 +8,23 @@ using GnuPlusLinux.Models;
 
 namespace GnuPlusLinux.Controllers
 {
-    public class GnuController : Controller
+    public class HomeController : Controller
     {
-		    [HttpGet]
+	[HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-		    [HttpGet]
+        [HttpGet]
+        public IActionResult Registration()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+	[HttpGet]
         public IActionResult Login()
         {
             ViewData["Message"] = "Your contact page.";
@@ -24,7 +32,7 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		    [HttpGet]
+		[HttpGet]
         public IActionResult Application()
         {
             ViewData["Message"] = "Your contact page.";
@@ -32,7 +40,7 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		    [HttpGet]
+	[HttpGet]
         public IActionResult Members()
         {
             ViewData["Message"] = "Your contact page.";
@@ -40,7 +48,15 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		    [HttpGet]
+        [HttpGet]
+        public IActionResult Information()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+	[HttpGet]
         public IActionResult Calendar()
         {
             ViewData["Message"] = "Your contact page.";
@@ -48,13 +64,13 @@ namespace GnuPlusLinux.Controllers
             return View();
         }
 
-		    [HttpGet]
+	[HttpGet]
         public IActionResult Privacy()
         {
             return View();
         }
 
-		    [HttpGet]
+	[HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

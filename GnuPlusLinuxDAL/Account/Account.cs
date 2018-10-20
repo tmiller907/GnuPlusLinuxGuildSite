@@ -16,7 +16,7 @@ namespace GnuPlusLinuxDAL
 		[Required]
 		public string password { get; set; }
 
-		[Compare("Password", ErrorMessage = "Passwords do not match")]
+		[Compare("password", ErrorMessage = "Passwords do not match")]
 		public string confirmPw { get; set; }
 
 		[Required]

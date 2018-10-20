@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+
+using GnuPlusLinux.Models.Forums;
 
 namespace GnuPlusLinux.Controllers
 {
     public class ForumsController : Controller
     {
-        private const string TITLE = "Forums";
+        // Page Titles
+        private const string IndexTitle = "Forums";
+
         public IActionResult Index()
         {
-            ViewBag.Message = "Welcome to the GNU Plus Linux Fourms";
-            ViewBag.Title = TITLE;
+            IndexViewModel model = new IndexViewModel(IndexTitle);
+            model.message = "Welcome to the GNU Plus Linux Fourms";
 
-            return View();
+            return View(model);
         }
 
     }

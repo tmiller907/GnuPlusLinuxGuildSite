@@ -177,3 +177,15 @@ label.menu-toggle {
                 display: block;
                 font-size: 26px;
             }
+
+/**************************
+ **** Application Form ****
+ **************************/
+
+#application_form {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 2%;
+}

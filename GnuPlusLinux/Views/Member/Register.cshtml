@@ -1,81 +1,83 @@
-﻿@model GnuPlusLinuxDAL.Account
+﻿@model GnuPlusLinux.Models.Member.RegistrationViewModel
 
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = Model.title;
 }
 
-<h2>Register</h2>
+<h2>@Model.title</h2>
 
 <h4>Account</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AccountId" />
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPw" class="control-label"></label>
-                <input asp-for="ConfirmPw" class="form-control" />
-                <span asp-validation-for="ConfirmPw" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsAdmin" /> @Html.DisplayNameFor(model => model.IsAdmin)
-                    </label>
+<div id="application_form">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="account.accountId" />
+                <div class="form-group">
+                    <label asp-for="account.username" class="control-label"></label>
+                    <input asp-for="account.username" class="form-control" />
+                    <span asp-validation-for="account.username" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsMod" /> @Html.DisplayNameFor(model => model.IsMod)
-                    </label>
+                <div class="form-group">
+                    <label asp-for="account.password" class="control-label"></label>
+                    <input asp-for="account.password" class="form-control" />
+                    <span asp-validation-for="account.password" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToonName" class="control-label"></label>
-                <input asp-for="ToonName" class="form-control" />
-                <span asp-validation-for="ToonName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Class" class="control-label"></label>
-                <input asp-for="Class" class="form-control" />
-                <span asp-validation-for="Class" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Profession1" class="control-label"></label>
-                <input asp-for="Profession1" class="form-control" />
-                <span asp-validation-for="Profession1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Profession2" class="control-label"></label>
-                <input asp-for="Profession2" class="form-control" />
-                <span asp-validation-for="Profession2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <label asp-for="account.confirmPw" class="control-label"></label>
+                    <input asp-for="account.confirmPw" class="form-control" />
+                    <span asp-validation-for="account.confirmPw" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.email" class="control-label"></label>
+                    <input asp-for="account.email" class="form-control" />
+                    <span asp-validation-for="account.email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="account.isAdmin" /> @Html.DisplayNameFor(model => model.account.isAdmin)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="account.isMod" /> @Html.DisplayNameFor(model => model.account.isMod)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.ToonName" class="control-label"></label>
+                    <input asp-for="account.ToonName" class="form-control" />
+                    <span asp-validation-for="account.ToonName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.toonClass" class="control-label"></label>
+                    <input asp-for="account.toonClass" class="form-control" />
+                    <span asp-validation-for="account.toonClass" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.role" class="control-label"></label>
+                    <input asp-for="account.role" class="form-control" />
+                    <span asp-validation-for="account.role" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.profession1" class="control-label"></label>
+                    <input asp-for="account.profession1" class="form-control" />
+                    <span asp-validation-for="account.profession1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="account.profession2" class="control-label"></label>
+                    <input asp-for="account.profession2" class="form-control" />
+                    <span asp-validation-for="account.profession2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

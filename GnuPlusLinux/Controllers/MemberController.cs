@@ -1,55 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Threading.Tasks;
+
+using GnuPlusLinux.Models.Member;
 using GnuPlusLinuxDAL;
-using Microsoft.AspNetCore.Mvc;
 
 namespace GnuPlusLinux.Controllers
 {
     public class MemberController : Controller
     {
-        public const string TITLE = "Member";
+        // Page Titles
+        public const string RegistrationPageTitle = "Register";
+
         private AccountContext _context;
+
         public MemberController(AccountContext context)
         {
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        [HttpGet]
         public IActionResult Register(int? id)
         {
-            ViewBag.Title = TITLE;
-            Account account = new Account();
+            RegistrationViewModel model =
+                new RegistrationViewModel(RegistrationPageTitle);
+
+            Account currentAccount = new Account();
+
             if ((id ?? 0) > 0)
             {
-                account = _context.Accounts.Where(a => a.AccountId == id).FirstOrDefault();
+                currentAccount = _context.accounts
+                    .Where(a => a.accountId == id)
+                    .FirstOrDefault();
             }
-            return View(account);
+
+            model.account = currentAccount;
+
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Register(Account userAccount)
         {
-            ViewBag.Title = TITLE;
+            RegistrationViewModel model =
+                new RegistrationViewModel(RegistrationPageTitle);
+
             if (ModelState.IsValid)
             {
-                var savedAccount = _context.Accounts.Where(a => a.AccountId == userAccount.AccountId).FirstOrDefault();
+                var savedAccount = _context.accounts
+                    .Where(a => a.accountId == userAccount.accountId)
+                    .FirstOrDefault();
+
                 if (savedAccount == null)
                 {
-                    _context.Accounts.Add(userAccount);
-                } else
+                    _context.accounts.Add(userAccount);
+                }
+                else
                 {
                     savedAccount = userAccount;
                 }
+
                 _context.SaveChanges();
-                return RedirectToAction("Register", new { id = userAccount.AccountId });
+                return RedirectToAction("Register", new { id = userAccount.accountId });
             }
-            return View();
+
+            return View(model);
         }
     }
 }

@@ -15,6 +15,6 @@ Please refer to our Issues to see if there is something that you'd like to contr
 
 If you'd like to add a feature that has not been mentioned, then add it as an issue. If it's a good suggestion, then we can assign it to you (or part of it depending on how large of a project it is).
 
-Also be sure to check out our style guide before submitting a pull request.
+Also be sure to check out our [style](https://github.com/GnuPlusLinuxGuild/GnuPlusLinuxGuildSite/blob/master/STYLE.md) guide before submitting a pull request.
 
 As a side note, if you see something that doesn't follow our style guide, then please feel free to submit a PR request fixing it.

@@ -12,33 +12,37 @@ namespace GnuPlusLinux
     {
         public static void Main(string[] args)
         {
-			IWebHost build = BuildWebHost(args);
+            IWebHost build = BuildWebHost(args);
 
-			using (IServiceScope scope = build.Services.CreateScope()) {
-				IServiceProvider services = scope.ServiceProvider;
+            using (IServiceScope scope = build.Services.CreateScope())
+            {
+                IServiceProvider services = scope.ServiceProvider;
 
-				try {
-					AccountContext context = services
-						.GetRequiredService<AccountContext>();
+                try
+                {
+                    AccountContext context = services
+                        .GetRequiredService<AccountContext>();
 
-					AccountDatabaseInitializer.Seed(context);
-				}
-				catch (Exception ex) {
-					ILogger logger = services
-						.GetRequiredService<ILogger<Program>>();
+                    AccountDatabaseInitializer.Seed(context);
+                }
+                catch (Exception ex)
+                {
+                    ILogger logger = services
+                        .GetRequiredService<ILogger<Program>>();
 
-					logger.LogError(ex, 
-						"An error occurred seeding the database.");
-				}
-			}
+                    logger.LogError(ex,
+                        "An error occurred seeding the database.");
+                }
+            }
 
-			build.Run();
+            build.Run();
         }
 
-		private static IWebHost BuildWebHost(string[] args) {
-			return WebHost.CreateDefaultBuilder(args)
-				.UseStartup<Startup>()
-				.Build();
-		}
+        private static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
+        }
     }
 }
